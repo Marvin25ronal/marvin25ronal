@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "firstName": "Marvin Ronaldo",
+    "lastName": "Martínez Marroquín",
+    "title": "Ingeniero en Ciencias y Sistemas",
+    "mastersDegree": "Maestría en Inteligencia Artificial (en trámite)",
+    "description": "Construyendo soluciones digitales innovadoras con tecnología de vanguardia. Especializado en desarrollo full-stack y arquitectura de sistemas moderna.",
+    "viewProjects": "Ver Proyectos",
+    "downloadResume": "Descargar CV",
+    "scroll": "Desplazar"
+  },
+  "nav": {
+    "home": "Inicio",
+    "technologies": "Tecnologías",
+    "projects": "Proyectos",
+    "hobbies": "Hobbies",
+    "contact": "Contacto"
+  },
+  "common": {
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "English"
+  }
+}

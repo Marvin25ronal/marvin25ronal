@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "firstName": "Marvin Ronaldo",
+    "lastName": "Martínez Marroquín",
+    "title": "Science & Systems Engineer",
+    "mastersDegree": "M.Sc. in Artificial Intelligence (In Progress)",
+    "description": "Building innovative digital solutions with cutting-edge technology. Specializing in full-stack development and modern system architecture.",
+    "viewProjects": "View Projects",
+    "downloadResume": "Download Resume",
+    "scroll": "Scroll"
+  },
+  "nav": {
+    "home": "Home",
+    "technologies": "Technologies",
+    "projects": "Projects",
+    "hobbies": "Hobbies",
+    "contact": "Contact"
+  },
+  "common": {
+    "language": "Language",
+    "spanish": "Español",
+    "english": "English"
+  }
+}

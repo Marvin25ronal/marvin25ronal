@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
+/* ============================================
+   TECH ZONE COLORS - Portfolio Design System
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Tech Zone - Dark Aesthetic */
+  --tech-bg-deep: #0a0e1a;
+  --tech-bg-mid: #1a1f35;
+  --tech-blue: #3b82f6;
+  --tech-blue-light: #60a5fa;
+  --tech-purple: #8b5cf6;
+  --tech-purple-light: #a78bfa;
+  --tech-cyan: #06b6d4;
+  --tech-text: #f8fafc;
+  --tech-text-dim: #94a3b8;
+
+  /* Spark Effects */
+  --spark-primary: #60a5fa;
+  --spark-accent: #a78bfa;
+  --spark-highlight: #ffffff;
+  --spark-glow: rgba(59, 130, 246, 0.15);
+
+  /* Default values for compatibility */
+  --background: #0a0e1a;
+  --foreground: #f8fafc;
 }
 
 @theme inline {
@@ -10,17 +31,339 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Extend Tailwind with custom colors */
+  --color-tech-deep: var(--tech-bg-deep);
+  --color-tech-mid: var(--tech-bg-mid);
+  --color-tech-blue: var(--tech-blue);
+  --color-tech-blue-light: var(--tech-blue-light);
+  --color-tech-purple: var(--tech-purple);
+  --color-tech-purple-light: var(--tech-purple-light);
+  --color-tech-cyan: var(--tech-cyan);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--tech-bg-deep);
+  color: var(--tech-text);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   HERO SECTION ANIMATIONS
+   ============================================ */
+
+/* Animated Gradient Mesh - Layer 1 */
+@keyframes electricField {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(167, 139, 250, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 60%),
+    linear-gradient(135deg, var(--tech-bg-deep) 0%, var(--tech-bg-mid) 100%);
+  background-size: 200% 200%;
+  animation: electricField 15s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Glow Orbs - Layer 2 */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: pulseGlow 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+.glow-orb-1 {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: 15%;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.15), transparent);
+  animation-delay: 0s;
+}
+
+.glow-orb-2 {
+  width: 300px;
+  height: 300px;
+  bottom: 20%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.12), transparent);
+  animation-delay: 3s;
+}
+
+/* Photo Glow Effect */
+@keyframes photoGlow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.photo-glow {
+  animation: photoGlow 4s ease-in-out infinite;
+}
+
+/* Scroll Indicator */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.scroll-indicator {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* ============================================
+   PREMIUM BUTTON ANIMATIONS & STYLES
+   ============================================ */
+
+/* PRIMARY BUTTON - Remove ALL outlines and focus rings */
+.hero-primary-button {
+  outline: none !important;
+  border: none !important;
+}
+
+.hero-primary-button:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.3) !important;
+}
+
+.hero-primary-button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.4),
+              0 0 40px rgba(59, 130, 246, 0.6),
+              0 0 80px rgba(139, 92, 246, 0.3),
+              0 20px 30px -10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.hero-primary-button:active {
+  outline: none !important;
+}
+
+.hero-primary-button:hover {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.6),
+              0 0 80px rgba(139, 92, 246, 0.3),
+              0 20px 30px -10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* SECONDARY BUTTON - Remove ALL outlines and fix PDF download outline */
+.hero-secondary-button {
+  outline: none !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.hero-secondary-button:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15) !important;
+}
+
+.hero-secondary-button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2),
+              0 0 30px rgba(255, 255, 255, 0.15),
+              0 10px 25px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.hero-secondary-button:active {
+  outline: none !important;
+}
+
+.hero-secondary-button:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15),
+              0 10px 25px -5px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Global link outline removal for download links */
+a[download] {
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+a[download]:focus {
+  outline: none !important;
+}
+
+/* Shimmer effect for primary button */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Floating animation for containers */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient animation for text */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 4s ease infinite;
+}
+
+/* ============================================
+   PREMIUM GLASS MORPHISM UTILITIES
+   ============================================ */
+
+.glass-premium {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Premium gradient border effect */
+.gradient-border {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.5), rgba(167, 139, 250, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-background {
+    animation: none;
+    background: linear-gradient(135deg, var(--tech-bg-deep) 0%, var(--tech-bg-mid) 100%);
+  }
+
+  .glow-orb,
+  .photo-glow,
+  .scroll-indicator,
+  .animate-float,
+  .animate-gradient {
+    animation: none !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  .glow-orb {
+    filter: blur(40px);
+  }
+
+  .glow-orb-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .glow-orb-2 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ============================================
+   BUTTON ACCESSIBILITY - KEYBOARD NAVIGATION
+   ============================================ */
+
+/* Ensure keyboard focus is visible but not ugly */
+button:focus-visible,
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+}
+
+/* Remove default browser button styles */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
