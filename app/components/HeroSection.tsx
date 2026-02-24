@@ -227,7 +227,7 @@ export function HeroSection() {
 
                 {/* Uncomment when you have your photo */}
                 <Image
-                  src="/profile-photo.jpg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/profile-photo.jpg`}
                   alt="Marvin Ronaldo Martínez Marroquín"
                   fill
                   className="object-cover"

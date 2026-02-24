@@ -226,16 +226,17 @@ export function PortfolioSection() {
   const t = useTranslations('portfolio');
   const [activeFilter, setActiveFilter] = useState('all');
 
+  const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   const projects: Project[] = [
     {
       id: 'mcdonalds',
       category: 'mobile',
       tags: ['React Native', 'Android', 'iOS', 'CI/CD', 'Mesoamérica','NextJS','NestJS'],
-      // Agrega capturas en /public/projects/  ej: '/projects/mcdonalds-1.jpg'
       images: [
-        '/projects/mcdonalds-1.png',
-        '/projects/mcdonalds-2.png',
-        '/projects/mcdonalds-3.png',
+        `${bp}/projects/mcdonalds-1.png`,
+        `${bp}/projects/mcdonalds-2.png`,
+        `${bp}/projects/mcdonalds-3.png`,
       ],
       links: {},
     },
@@ -244,8 +245,8 @@ export function PortfolioSection() {
       category: 'fullstack',
       tags: ['React', 'Node.js', 'Cotizaciones', 'Paquetes', 'PostgreSQL'],
       images: [
-        '/projects/celebraciones-1.png',
-        '/projects/celebraciones-2.png',
+        `${bp}/projects/celebraciones-1.png`,
+        `${bp}/projects/celebraciones-2.png`,
       ],
       links: {},
     },
@@ -254,9 +255,9 @@ export function PortfolioSection() {
       category: 'ai',
       tags: ['Python', 'TensorFlow', 'Lenguaje de Señas', 'Tiempo Real', 'OpenCV'],
       images: [
-        '/projects/hands-1.jpeg',
-        '/projects/hands-2.jpeg',
-        '/projects/hands-3.jpeg',
+        `${bp}/projects/hands-1.jpeg`,
+        `${bp}/projects/hands-2.jpeg`,
+        `${bp}/projects/hands-3.jpeg`,
       ],
       links: {},
     },
@@ -265,10 +266,10 @@ export function PortfolioSection() {
       category: 'mobile',
       tags: ['React Native', 'SQLite', 'Inventario', 'Impresora Térmica', 'Kiosko'],
       images: [
-        '/projects/ice-1.png',
-        '/projects/ice-2.png',
-        '/projects/ice-3.png',
-        '/projects/ice-4.png',
+        `${bp}/projects/ice-1.png`,
+        `${bp}/projects/ice-2.png`,
+        `${bp}/projects/ice-3.png`,
+        `${bp}/projects/ice-4.png`,
       ],
       links: {},
     },
