@@ -11,6 +11,7 @@
   },
   "nav": {
     "home": "Inicio",
+    "hero": "Inicio",
     "technologies": "Tecnologías",
     "projects": "Proyectos",
     "hobbies": "Hobbies",
@@ -20,5 +21,128 @@
     "language": "Idioma",
     "spanish": "Español",
     "english": "English"
+  },
+  "portfolio": {
+    "eyebrow": "Mi trabajo",
+    "title": "Proyectos",
+    "description": "Soluciones reales que he construido en producción para empresas y proyectos de investigación.",
+    "githubCta": "Ver más en GitHub",
+    "filters": {
+      "all": "Todos",
+      "mobile": "Mobile",
+      "fullstack": "Full Stack",
+      "ai": "IA & ML"
+    },
+    "projects": {
+      "mcdonalds": {
+        "icon": "🍟",
+        "title": "McDonald's App — Mesoamérica",
+        "company": "IUNGO · 2023 – Presente",
+        "description": "Aplicación móvil oficial de McDonald's activa en Guatemala, Honduras, Nicaragua y El Salvador. Responsable del control, desarrollo de software, mantenimiento y despliegue de nuevas funcionalidades para los 4 países."
+      },
+      "celebrations": {
+        "icon": "🎉",
+        "title": "Plataforma de Celebraciones Infantiles",
+        "company": "Proyecto Comercial",
+        "description": "Plataforma web donde los usuarios pueden cotizar eventos de celebraciones infantiles, obtener estimaciones de precios y explorar paquetes configurables según sus necesidades."
+      },
+      "hands": {
+        "icon": "🤟",
+        "title": "Hands Connection",
+        "company": "Proyecto de Graduación · UNIR",
+        "description": "Sistema que permite a personas con dificultades del habla comunicarse mediante lenguaje de señas. La aplicación interpreta en tiempo real los signos capturados por cámara usando un modelo de IA entrenado, diseñado para instalarse en centros comerciales con conexión a internet."
+      },
+      "icecream": {
+        "icon": "🍦",
+        "title": "IceCreamManager",
+        "company": "Proyecto Personal · Empresa Sarita",
+        "description": "Aplicación móvil de gestión para kioscos de helados: control de inventario, registro de compras y ventas, base de datos local con SQLite, impresión de tickets e informes en impresora térmica. Vendida e implementada en producción para Empresa Sarita."
+      }
+    }
+  },
+  "technologies": {
+    "title": "Tecnologías",
+    "description": "Las herramientas y tecnologías que utilizo para construir soluciones digitales modernas y escalables.",
+    "categories": {
+      "all": "Todas",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de Datos",
+      "ai": "IA & Data Science",
+      "tools": "DevOps & Cloud"
+    },
+    "stats": {
+      "experience": {
+        "number": "5+",
+        "label": "Años de Experiencia"
+      },
+      "projects": {
+        "number": "20+",
+        "label": "Proyectos Completados"
+      },
+      "technologies": {
+        "number": "30+",
+        "label": "Tecnologías Dominadas"
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Hablemos",
+    "title": "Contacto",
+    "description": "¿Tienes un proyecto en mente o una oportunidad? Me encantaría escucharte.",
+    "intro": "Estoy disponible para nuevas oportunidades, proyectos freelance o simplemente para conectar. Respondo lo antes posible.",
+    "links": {
+      "email": "Correo electrónico",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp"
+    },
+    "form": {
+      "title": "Envíame un mensaje",
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto o idea...",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando...",
+      "successTitle": "¡Mensaje enviado!",
+      "successMessage": "Gracias por escribirme. Te responderé pronto.",
+      "sendAnother": "Enviar otro mensaje"
+    },
+    "footer": "Construido con Next.js · TypeScript · Tailwind CSS"
+  },
+  "hobbies": {
+    "eyebrow": "Más allá del código",
+    "title": "Hobbies",
+    "description": "La vida no es solo pantallas. Salir al mundo me recarga de energía y perspectiva.",
+    "quote": "Escalar una montaña o depurar un bug complejo requieren lo mismo: paciencia, estrategia y no rendirse.",
+    "items": {
+      "coffee": {
+        "title": "Café",
+        "description": "Fanático del café de especialidad. Explorar diferentes métodos de preparación y orígenes es todo un arte que aprecio con cada taza."
+      },
+      "mountaineering": {
+        "title": "Montañismo",
+        "description": "Conquistar cumbres en Guatemala y la región. Cada ascenso es un desafío físico y mental que pone a prueba la perseverancia."
+      },
+      "kayak": {
+        "title": "Kayak",
+        "description": "Recorrer ríos y lagos en kayak es una de las mejores formas de conectar con la naturaleza y desconectar de la rutina."
+      },
+      "camping": {
+        "title": "Acampar",
+        "description": "Pasar noches bajo las estrellas, hacer fogatas y despertar con el sonido de la naturaleza. La simplicidad en su mejor forma."
+      },
+      "travel": {
+        "title": "Viajar",
+        "description": "Explorar nuevas culturas, gastronomía y paisajes. Cada viaje amplía la perspectiva y trae nuevas ideas al trabajo."
+      },
+      "volcanoes": {
+        "title": "Volcanes",
+        "description": "Guatemala tiene algunos de los volcanes más impresionantes de Centroamérica. Subir al Acatenango o ver la lava del Pacaya son experiencias únicas."
+      }
+    }
   }
 }

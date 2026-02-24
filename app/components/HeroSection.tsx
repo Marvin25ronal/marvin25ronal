@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 export function HeroSection() {
   const t = useTranslations('hero');
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* ============================================
           BACKGROUND LAYERS - PROFESSIONAL ELECTROMAGNETIC FIELD
           ============================================ */}

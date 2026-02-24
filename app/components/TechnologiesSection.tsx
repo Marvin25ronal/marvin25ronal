@@ -31,30 +31,56 @@ export function TechnologiesSection() {
   const technologies: TechItem[] = [
     // Frontend
     { name: 'React', color: '#61DAFB', category: 'frontend' },
-    { name: 'Next.js', color: '#000000', category: 'frontend' },
+    { name: 'Next.js', color: '#7c3aed', category: 'frontend' },
+    { name: 'Angular', color: '#DD0031', category: 'frontend' },
     { name: 'TypeScript', color: '#3178C6', category: 'frontend' },
+    { name: 'Redux', color: '#764ABC', category: 'frontend' },
+    { name: 'React Native', color: '#61DAFB', category: 'frontend' },
     { name: 'Tailwind CSS', color: '#06B6D4', category: 'frontend' },
-    { name: 'Vue.js', color: '#4FC08D', category: 'frontend' },
+    { name: 'PHP', color: '#777BB4', category: 'frontend' },
 
     // Backend
     { name: 'Node.js', color: '#339933', category: 'backend' },
     { name: 'Python', color: '#3776AB', category: 'backend' },
     { name: 'Java', color: '#007396', category: 'backend' },
-    { name: 'Express', color: '#000000', category: 'backend' },
-    { name: 'Django', color: '#092E20', category: 'backend' },
+    { name: 'C#', color: '#68217A', category: 'backend' },
+    { name: 'Express', color: '#a78bfa', category: 'backend' },
+    { name: 'Django', color: '#44b78b', category: 'backend' },
+    { name: '.NET', color: '#512BD4', category: 'backend' },
+    { name: 'NestJS', color: '#E0234E', category: 'backend' },
+    { name: 'Laravel', color: '#FF2D20', category: 'backend' },
+    { name: 'PHP', color: '#777BB4', category: 'backend' },
 
     // Database
     { name: 'PostgreSQL', color: '#4169E1', category: 'database' },
     { name: 'MongoDB', color: '#47A248', category: 'database' },
     { name: 'MySQL', color: '#4479A1', category: 'database' },
+    { name: 'SQL Server', color: '#CC2927', category: 'database' },
+    { name: 'DynamoDB', color: '#FF9900', category: 'database' },
+    { name: 'Oracle', color: '#F80000', category: 'database' },
     { name: 'Redis', color: '#DC382D', category: 'database' },
+    { name: 'SQLite', color: '#003B57', category: 'database' },
+
+    // AI & Data Science
+    { name: 'Jupyter', color: '#F37626', category: 'ai' },
+    { name: 'scikit-learn', color: '#F7931E', category: 'ai' },
+    { name: 'TensorFlow', color: '#FF6F00', category: 'ai' },
+    { name: 'Matplotlib', color: '#11557C', category: 'ai' },
+    { name: 'R', color: '#276DC3', category: 'ai' },
+    { name: 'LLM', color: '#10B981', category: 'ai' },
+    { name: 'Sentiment AI', color: '#8B5CF6', category: 'ai' },
+    { name: 'Graphviz', color: '#2596be', category: 'ai' },
 
     // Tools & DevOps
-    { name: 'Git', color: '#F05032', category: 'tools' },
     { name: 'Docker', color: '#2496ED', category: 'tools' },
+    { name: 'Kubernetes', color: '#326CE5', category: 'tools' },
     { name: 'AWS', color: '#FF9900', category: 'tools' },
-    { name: 'GitHub', color: '#181717', category: 'tools' },
-    { name: 'VS Code', color: '#007ACC', category: 'tools' },
+    { name: 'Google Cloud', color: '#4285F4', category: 'tools' },
+    { name: 'GitHub', color: '#a78bfa', category: 'tools' },
+    { name: 'GitLab', color: '#FC6D26', category: 'tools' },
+    { name: 'Apple Cloud', color: '#999999', category: 'tools' },
+    { name: 'Android Cloud', color: '#3DDC84', category: 'tools' },
+    { name: 'RabbitMQ', color: '#FF6600', category: 'tools' },
   ];
 
   const categories = [
@@ -62,6 +88,7 @@ export function TechnologiesSection() {
     { id: 'frontend', label: t('categories.frontend') },
     { id: 'backend', label: t('categories.backend') },
     { id: 'database', label: t('categories.database') },
+    { id: 'ai', label: t('categories.ai') },
     { id: 'tools', label: t('categories.tools') },
   ];
 
@@ -142,7 +169,7 @@ export function TechnologiesSection() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {filteredTechnologies.map((tech, index) => (
             <div
-              key={tech.name}
+              key={tech.name + index}
               className="tech-card group"
               style={{
                 animation: `fadeInUp 0.5s ease-out ${index * 0.05}s both`,
@@ -181,7 +208,7 @@ export function TechnologiesSection() {
 
                 {/* Category Badge */}
                 <p className="text-center text-gray-400 text-sm mt-2">
-                  {t(`categories.${tech.category}`)}
+                  {t(`categories.${tech.category}` as 'categories.all' | 'categories.frontend' | 'categories.backend' | 'categories.database' | 'categories.ai' | 'categories.tools')}
                 </p>
               </div>
             </div>
