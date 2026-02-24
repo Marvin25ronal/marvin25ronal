@@ -1,23 +1,26 @@
 'use client';
 
-import { useTransition } from 'react';
-import { useRouter } from 'next/navigation';
-import { useLocale } from 'next-intl';
+import { useState, useEffect } from 'react';
 import { locales, type Locale } from '@/app/lib/locales';
 
+function getStoredLocale(): Locale {
+  if (typeof document === 'undefined') return 'es';
+  const match = document.cookie.match(/NEXT_LOCALE=([^;]+)/);
+  const val = match?.[1];
+  return (val && locales.includes(val as Locale)) ? (val as Locale) : 'es';
+}
+
 export function LanguageSwitcher() {
-  const currentLocale = useLocale();
-  const [isPending, startTransition] = useTransition();
-  const router = useRouter();
+  const [currentLocale, setCurrentLocale] = useState<Locale>('es');
+
+  useEffect(() => {
+    setCurrentLocale(getStoredLocale());
+  }, []);
 
   const switchLocale = (newLocale: Locale) => {
-    // Set cookie
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`;
-
-    startTransition(() => {
-      // Reload the page to apply new locale
-      router.refresh();
-    });
+    setCurrentLocale(newLocale);
+    window.dispatchEvent(new Event('localechange'));
   };
 
   return (
@@ -26,11 +29,10 @@ export function LanguageSwitcher() {
         <button
           key={loc}
           onClick={() => switchLocale(loc)}
-          disabled={isPending}
           className={`
             relative px-6 py-3 rounded-xl font-bold
             transition-all duration-300 ease-out
-            ${isPending ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 active:scale-[0.98]'}
+            hover:scale-105 active:scale-[0.98]
             ${
               currentLocale === loc
                 ? `
@@ -52,12 +54,9 @@ export function LanguageSwitcher() {
           `}
           aria-label={`Switch to ${loc === 'es' ? 'Spanish' : 'English'}`}
         >
-          {/* Inner highlight for active state */}
           {currentLocale === loc && (
             <span className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent rounded-t-xl opacity-50" />
           )}
-
-          {/* Button text */}
           <span className="relative z-10">{loc.toUpperCase()}</span>
         </button>
       ))}
